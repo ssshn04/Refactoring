@@ -6,22 +6,31 @@ public class Order {
     private String customerName;
     private List<String> items;
     private double totalPrice;
-    public Order(String customerName, List<String> items) {
+    private PriceManager priceManager;
+    public Order(String customerName, List<String> items, PriceManager priceManager) {
         this.customerName = customerName;
         this.items = items;
-        this.totalPrice = calculateTotalPrice();
+        this.priceManager = priceManager;
+        this.totalPrice = priceManager.calculateTotalPrice(items);
     }
     public void processOrder() {
-        // Багато коду для обробки замовлення
-        // Цей метод став дуже довгим і складним для розуміння
+        validateItems();
+        prepareShipment();
+        notifyCustomer();
     }
-    private double calculateTotalPrice() {
-        double price = 0.0;
-        for (String item : items) {
-            // Логіка для розрахунку ціни кожного товару
-            // Додати до загальної ціни
-        }
-        return price;
+
+    private void validateItems() {
+        System.out.println("Validating items...");
     }
-    // Багато інших методів, які опрацьовують замовлення
+
+    private void prepareShipment() {
+        System.out.println("Preparing shipment...");
+    }
+
+    private void notifyCustomer() {
+        System.out.println("Notifying customer...");
+    }
+    public double getTotalPrice() {
+        return totalPrice;
+    }
 }
