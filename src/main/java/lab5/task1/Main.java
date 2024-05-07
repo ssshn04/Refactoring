@@ -4,24 +4,20 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<String> usernames = new ArrayList<>();
-        usernames.add("user1");
-        usernames.add("adminUser");
-        usernames.add("user2");
-        usernames.add("admin123");
+        User user1 = new User("user1", "user1@gmail.com", "123", "Address 1");
+        User admin1 = new User("adminUser", "usAd@gmail.com", "12555", "Address 2");
+        User user2 = new User("user2", "user2@gmail.com", "321", "Address 3");
+        User admin123 = new User("admin123", "userAdmin123@gmail.com", "123456", "Address 4");
+        ArrayList<User> users = new ArrayList<>();
+        users.add(user1);
+        users.add(admin1);
+        users.add(user2);
+        users.add(admin123);
 
-        UserListProcessor processor = new UserListProcessor(usernames);
+        UserListProcessor processor = new UserListProcessor(users);
         processor.processUserList();
         System.out.println("Total admins: " + processor.countAdminUsers());
 
-        OrderTracker orderTracker = new OrderTracker();
-
-        orderTracker.updateOrderStatus("order001", "Processing");
-        orderTracker.updateOrderStatus("order002", "Shipped");
-        System.out.println("Status of order001: " + orderTracker.getOrderStatus("order001"));
-        System.out.println("Status of order002: " + orderTracker.getOrderStatus("order002"));
-
-        User user1 = new User("user1", "user1@example.com", "password123", "1234 Street");
         processor.addUser(user1);
         processor.sendEmailToUser(user1);
     }

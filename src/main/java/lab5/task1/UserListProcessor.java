@@ -4,26 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserListProcessor {
-    private ArrayList<String> usernames;
-    private List<User> users = new ArrayList<>();
-    public UserListProcessor(ArrayList<String> usernames) {
-        this.usernames = usernames;
+    private final List<User> users;
+    public UserListProcessor(ArrayList<User> users) {
+        this.users = users;
     }
     public void processUserList() {
-        for (String username : usernames) {
-            System.out.println("Processing user: " + username);
-            adminDetector(username);
+        for (User user : users) {
+            System.out.println("Processing user: " + user.getUsername());
+            adminDetector(user);
         }
     }
 
-    private void adminDetector(String username) {
-        if (username.contains("admin")) {
+    private void adminDetector(User user) {
+        if (user.isAdmin()) {
             System.out.println("Admin user detected!");
         }
     }
 
-    public int countAdminUsers() {
-        return (int) usernames.stream().filter(u -> u.contains("admin")).count();
+    public long countAdminUsers() {
+        return users.stream().filter(User::isAdmin).count();
     }
 
     public void addUser(User user) {

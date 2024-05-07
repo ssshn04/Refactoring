@@ -44,6 +44,10 @@ public class User {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public boolean isAdmin() {
+        return username.contains("admin");
+    }
 }
 
 
