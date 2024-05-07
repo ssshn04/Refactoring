@@ -4,10 +4,10 @@ import java.util.List;
 
 public class Order {
     private String customerName;
-    private List<String> items;
+    private List<Item> items;
     private double totalPrice;
     private PriceManager priceManager;
-    public Order(String customerName, List<String> items, PriceManager priceManager) {
+    public Order(String customerName, List<Item> items, PriceManager priceManager) {
         this.customerName = customerName;
         this.items = items;
         this.priceManager = priceManager;

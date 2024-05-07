@@ -3,15 +3,15 @@ package lab5.task2;
 import java.util.List;
 
 public class PriceManager {
-    public double calculateTotalPrice(List<String> items) {
+    public double calculateTotalPrice(List<Item> items) {
         double price = 0.0;
-        for (String item : items) {
-            price += getPriceForItem(item);
+        for (Item item : items) {
+            price += getPriceForItem(item)*item.getQuantity();
         }
         return price;
     }
 
-    private double getPriceForItem(String item) {
-        return 200.00;
+    private double getPriceForItem(Item item) {
+        return item.getPrice();
     }
 }
