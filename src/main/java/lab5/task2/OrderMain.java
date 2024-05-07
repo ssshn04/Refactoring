@@ -9,7 +9,7 @@ public class OrderMain {
 
         PriceManager pricingService = new PriceManager();
 
-        Order order = new Order("John Doe", items, pricingService);
+        Order order = new Order("Viktoriia", items, pricingService);
 
         order.processOrder();
 
