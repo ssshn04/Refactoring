@@ -1,4 +1,4 @@
-package lab6.task1_2;
+package lab6.task1._2;
 
 import java.util.List;
 
