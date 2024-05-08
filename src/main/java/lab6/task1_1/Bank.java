@@ -4,10 +4,19 @@ import java.util.List;
 
 public class Bank {
     private List<Account> accounts;
-    // Конструктор та інші методи класу...
+
+    public Bank(List<Account> accounts) {
+        this.accounts = accounts;
+    }
+
     public void processAccounts() {
         for (Account account : accounts) {
-            account.calculateInterest();
+            calculateInterest(account);
         }
+    }
+    private void calculateInterest(Account account) {
+        double interest = account.getBalance() * account.getInterestRate() / 100;
+        System.out.println("Interest calculated for : " + interest);
+        // Логіка для обчислення відсотків...
     }
 }
