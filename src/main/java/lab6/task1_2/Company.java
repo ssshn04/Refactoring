@@ -4,10 +4,16 @@ import java.util.List;
 
 public class Company {
     private List<Employee> employees;
-    // Конструктор та інші методи класу...
+    private double getSalary;
+
+    public Company(List<Employee> employees, double getSalary) {
+        this.employees = employees;
+        this.getSalary = getSalary;
+    }
+
     public void printEmployeeSalaries() {
         for (Employee employee : employees) {
-            System.out.println(employee.getName() + ": " + employee.getSalary());
+            System.out.println(employee.getName() + ": " + getSalary);
         }
     }
 }
