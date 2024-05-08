@@ -1,0 +1,19 @@
+package lab6.task1_3;
+
+import java.util.List;
+
+public class EmployeePrinter {
+    private List<Employee> employees;
+
+    public EmployeePrinter(List<Employee> employees) {
+        this.employees = employees;
+    }
+
+    public void printEmployeeDetails(List<Employee> employees) {
+        for (Employee employee : employees) {
+        System.out.println("Name: " + employee.getName());
+        System.out.println("Department: " + employee.getDepartment());
+        System.out.println("Salary: " + employee.getSalary() + "\n");
+        }
+    }
+}
