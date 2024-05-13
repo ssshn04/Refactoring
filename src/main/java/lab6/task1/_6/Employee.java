@@ -8,8 +8,16 @@ public class Employee {
         return name;
     }
 
-    public String getDepartmentManagerName() {
-        return department.getManagerName();
+    public Employee(String name) {
+        this.name = name;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public Department getDepartment() {
+        return department;
     }
 }
 
