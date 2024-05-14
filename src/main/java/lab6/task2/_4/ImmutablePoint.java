@@ -19,7 +19,6 @@ public class ImmutablePoint {
         return y;
     }
 
-    // Перевизначимо методи equals() та hashCode() для порівняння об'єктів по значенню
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
